@@ -1,0 +1,12 @@
+@import "mixin";
+
+.forex_wrapper {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .content {
+    max-width: $content-width; 
+    margin: 0 auto;
+    color: $white;
+  }
+}

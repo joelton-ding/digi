@@ -1,0 +1,171 @@
+import React, { useEffect } from "react"
+import PropTypes from "prop-types"
+import Img from "gatsby-image"
+
+import styles from "./style.module.scss"
+
+const BackgroundSlider = ({
+  images,
+  duration,
+  transition,
+  initDelay,
+  query,
+  children,
+  nav,
+  ...gatsbyImageProps
+}) => {
+  let nodes = []
+  let bgRefs = []
+  let subRefs = []
+  let bgWrappers = []
+  let subWrappers = []
+  let CURRINDEX = 0
+  const { style, ...imageProps } = gatsbyImageProps
+  const ACTION = { NEXT: "NEXT", PREV: "PREV" }
+
+  nodes.safePush = function(data) {
+    if (data) {
+      return this.push(data)
+    } else {
+      return this.length
+    }
+  }
+
+  if (images) {
+    for (let image of images) {
+      nodes.safePush(
+        query.backgrounds.nodes.find(node => node.relativePath === image)
+      )
+    }
+  } else {
+    nodes = query.backgrounds.nodes
+  }
+
+  const imgs = nodes.map((data, index) => {
+    const backgroundStyle = {
+      position: "absolute",
+      zIndex: -10,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      padding: "none",
+      left: 0,
+      top: 0,
+      backgroundSize: "cover",
+      opacity: index ? 0 : 1,
+      transition: `opacity ${transition}s`,
+    }
+
+    const subStyle = {
+      opacity: index ? 0 : 1,
+      transition: `opacity ${transition}s`,
+      pointerEvents: index ? "none" : "auto",
+    }
+
+    subRefs[index] = React.createRef()
+    bgRefs[index] = React.createRef()
+
+    return (
+      <React.Fragment key={index}>
+        <div ref={bgRefs[index]}>
+          <Img
+            fluid={data.childImageSharp.fluid}
+            style={{ ...backgroundStyle, ...style }}
+            {...imageProps}
+          />
+        </div>
+        <div ref={subRefs[index]} style={subStyle}>
+          {React.Children.toArray(children)[index]}
+        </div>
+      </React.Fragment>
+    )
+  })
+
+  const initEffect = () => {
+    bgRefs.forEach(bgRef => {
+      bgWrappers.push(bgRef.current.firstElementChild)
+    })
+
+    subRefs.forEach(subRef => {
+      subWrappers.push(subRef.current)
+    })
+
+    // setTimeout(animate, initDelay * 1000, 0) //render firsttime auto run
+  }
+
+  const animate = function(action) {
+    console.log(CURRINDEX)
+
+    const length = bgWrappers.length
+
+    //current hide
+    bgWrappers[CURRINDEX].style.opacity = 0
+    //next show
+    bgWrappers[
+      action === ACTION.PREV
+        ? CURRINDEX === 0
+          ? length - 1
+          : CURRINDEX - 1
+        : (CURRINDEX + 1) % length
+    ].style.opacity = 1
+
+    // subWrappers[INDEX].style.opacity = 0
+    // subWrappers[INDEX].style.pointerEvents = "none"
+
+    // subWrappers[(INDEX + 1) % length].style.opacity = 1
+    // subWrappers[(INDEX + 1) % length].style.pointerEvents = "auto"
+
+    if (action === ACTION.PREV && CURRINDEX === 0) {
+      CURRINDEX = length - 1
+    } else if (action === ACTION.PREV && CURRINDEX > 0) {
+      CURRINDEX = CURRINDEX - 1
+    } else {
+      CURRINDEX = (CURRINDEX + 1) % length
+    }
+
+    setTimeout(animate, duration * 1000, (CURRINDEX + 1) % length) // set auto rotation
+  }
+
+  // Runs once after DOM is loaded; effectively `componentDidMount`
+  useEffect(initEffect, [])
+
+  return (
+    <>
+      <div>{imgs}</div>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          zIndex: 100,
+          width: "100vw",
+          height: "100vh",
+          display: nav ? "block" : "none",
+        }}
+      >
+        <button className={styles.prevBTN} onClick={() => animate(ACTION.PREV)}>
+          {"<"}
+        </button>
+        <button className={styles.nextBTN} onClick={() => animate(ACTION.NEXT)}>
+          {">"}
+        </button>
+      </div>
+    </>
+  )
+}
+
+BackgroundSlider.defaultProps = {
+  images: null,
+  duration: 5,
+  transition: 2,
+  initDelay: 5,
+}
+
+BackgroundSlider.propTypes = {
+  query: PropTypes.object.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string),
+  duration: PropTypes.number,
+  transition: PropTypes.number,
+  initDelay: PropTypes.number,
+}
+
+export default BackgroundSlider

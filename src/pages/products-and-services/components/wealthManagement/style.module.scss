@@ -1,0 +1,21 @@
+@import "mixin";
+
+.bank_cards_wrapper {
+  background: $section-blue-bg;
+  .content {
+    max-width: $content-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .wealth_img {
+      display: flex;
+      align-items: center;
+    }
+    ul {
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

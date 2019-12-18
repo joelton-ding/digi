@@ -1,0 +1,10 @@
+@import "mixin";
+.content {
+  margin: 0 auto;
+  max-width: $content-width;
+  padding-bottom: 60px !important;
+  h1 {
+    color: $blue;
+    font-weight: $font-bold-700;
+  }
+}

@@ -1,0 +1,19 @@
+@import "mixin";
+.about_dominica {
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  .content {
+    margin: 0 auto;
+    max-width: $content-width;
+    h1 {
+      color: $white;
+      font-weight: $font-bold-700;
+    }
+    p {
+      font-weight: $font-medium-500;
+    }
+  }
+}

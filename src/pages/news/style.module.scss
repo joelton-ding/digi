@@ -1,0 +1,19 @@
+@import "mixin";
+
+.content {
+  padding-top: 0 !important;
+  max-width: 1200px;
+  margin: 100px auto 0 auto;
+}
+
+.title {
+  font-size: 60px;
+  color: #0E4F79;
+}
+
+.date {
+  font-size: 24px;
+  color: #30B4F6;
+  margin-bottom: 80px;
+  font-weight: 500;
+}

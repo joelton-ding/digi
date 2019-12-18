@@ -1,0 +1,55 @@
+@import "mixin";
+
+.content {
+  max-width: $content-width;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .h1_aml {
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  ul {
+    li {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    color: $blue;
+    font-weight: $font-bold-700;
+  }
+
+  .cap {
+    padding: 40px 0;
+  }
+
+  .cap.first {
+    padding-bottom: 0;
+  }
+
+  .cap_text {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $font-regular-400;
+  }
+
+  .aml_content {
+    padding: 60px 0 0 0;
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: $font-bold-700;
+    }
+  }
+}
+
+.Atag {
+  color: #0e4f79;
+}

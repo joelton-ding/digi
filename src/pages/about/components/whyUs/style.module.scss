@@ -1,0 +1,30 @@
+@import "mixin";
+.content {
+  max-width: $content-width; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    color: $blue;
+    font-weight: $font-bold-700;
+  }
+  .text_big {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .about_img {
+    display: flex;
+    align-items: center;
+    @include desktop(){
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+  .sub_text {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: $font-regular-400;
+  }
+}

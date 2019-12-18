@@ -1,0 +1,133 @@
+@import "mixin";
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: $base__font-family;
+  .content_register {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px;
+    h2 {
+      font-size: 20px;
+      color: $blue;
+      line-height: 24px;
+      font-weight: $font-regular-400;
+    }
+  }
+  .register_list {
+    margin: 0 0 20px 0;
+    li {
+      list-style: none;
+      padding-left: 45px;
+      span {
+        padding-right: 20px;
+      }
+      span:before {
+        content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>');
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -45px;
+        background: #0e4f79;
+        border-radius: 100%;
+        width: 18px;
+        height: 18px;
+        color: #fff;
+        padding: 0 0 0 3px;
+        line-height: 20px;
+      }
+    }
+  }
+  .button_default {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+    background: transparent;
+    a {
+      text-decoration: none;
+      color: $blue;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid #0e4f79;
+      border-radius: 28px;
+      padding: 19px 25px;
+      height: $button-height;
+      font-size: 14px;
+      line-height: 16px;
+      overflow: hidden;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  h3 {
+    font-size: 16px;
+    color: $blue;
+    margin: 0 0 16px 0;
+  }
+  // .tabs-regsiter{
+  //   :global(.MuiTabs-flexContainer){
+  //     background: linear-gradient(180deg, #0E4F79 0%, #3F87C8 100%);
+  //     border-radius: 69px;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiTab-textColorPrimary.Mui-selected){
+  //     color: #fff;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiTabs-indicator){
+  //     background: transparent;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiPaper-elevation4){
+  //     box-shadow: none;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiAppBar-colorDefault){
+  //     background: transparent;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(button){
+  //     font-size: 34px;
+  //     font-weight: 600;
+  //     text-transform: capitalize;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiTab-textColorPrimary ){
+  //     color: #93B5CF;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiTab-labelIcon){
+  //     min-height: 138px;
+  //   }
+  // }
+  // .tabs-regsiter{
+  //   :global(.MuiPaper-root){
+  //     max-width: 750px;
+  //     margin: 0 auto;
+  //   }
+  // }
+}
+
+// .tabs-regsiter {
+//   #full-width-tab-0 {
+//     .MuiTab-wrapper {
+//       border-right: 2px solid #93B5CF;
+//     }
+//   }
+
+//   .MuiTab-wrapper {
+//     flex-direction: inherit;
+//     svg {
+//       margin-right: 20px;
+//       vertical-align: middle;
+//     }
+//   }
+// }

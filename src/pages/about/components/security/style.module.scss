@@ -1,0 +1,25 @@
+@import "mixin";
+.security {
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .content {
+    margin: 0 auto;
+    max-width: $content-width;
+    h1 {
+      color: $blue;
+      font-weight: $font-bold-700;
+    }
+    p {
+      font-weight: $font-medium-500;
+    }
+    .regulatory_list {
+      margin: 0;
+      padding-left: 15px;
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

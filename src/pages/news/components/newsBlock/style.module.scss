@@ -1,0 +1,8 @@
+@import "mixin";
+
+.content {
+  h1 {
+    color: $blue;
+    font-weight: $font-bold-700;
+  }
+}

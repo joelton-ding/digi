@@ -1,0 +1,57 @@
+@import "mixin";
+
+.content {
+  max-width: $content-width; 
+  margin: 0 auto;
+  h2 {
+    font-weight: $font-regular-400;
+    font-size: 24px; 
+    line-height: 28px;
+  }
+  .multicurrency_content {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .account_list {
+      margin: 0 0 20px 0;
+      li {
+        list-style: none;
+        padding-left: 45px;
+        span {
+          padding-right: 20px;
+        }
+        span:before {
+          content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+          display: inline-block;
+  			  vertical-align: middle;
+          margin-left: -45px; 
+          background: #67CF78;
+          border-radius: 100%;
+          width: 18px;
+          height: 18px;
+          color: #fff;
+          padding: 2px 0 0 2px;
+        }
+      }
+    }
+    .currency_img {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .person_content {
+    margin-top: 120px;
+    .inner {
+      border-radius: 8px;
+      box-shadow: 2px 2px 4px 2px rgba(14,79,121,0.1), 0 10px 10px 5px rgba(14,79,121,0.1);
+      padding: 30px 30px 30px 120px;
+      a {
+        color: $blue-lighten;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+}

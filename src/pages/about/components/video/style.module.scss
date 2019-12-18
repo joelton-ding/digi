@@ -1,0 +1,33 @@
+@import "mixin";
+.video {
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .content {
+    margin: 0 auto;
+    max-width: $content-width;
+    .player {
+      button {
+        top: 45%;
+        left: 45%;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        line-height: 82px;
+        font-size: 5em;
+        border: 0;
+        @include mobile(){
+          font-size: 3em;
+          line-height: 1.5em;
+          height: 1.5em;
+          width: 3em;
+          top: 10px;
+          left: 10px;
+          border-radius: 0.3em;
+        }
+      }
+    }
+  }
+}
+

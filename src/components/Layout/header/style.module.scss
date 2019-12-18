@@ -1,0 +1,80 @@
+@import "mixin";
+#mainHeader {
+  background: $white;
+}
+.component {
+  position: relative;
+  z-index: 1;
+  background: $white;
+  @include padmini() {
+    position: inherit;
+  }
+  &__main_header {
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    padding: 32px 1rem;
+    &__logo {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      width: 262px;
+      height: 64px;
+      float: left;
+      img {
+        width: 262px;
+        height: 64px;
+        margin-bottom: 0;
+      }
+    }
+    .menu-burger {
+      float: right;
+    }
+  }
+
+  @include mobile() {
+  }
+  @mixin padmini() {
+  }
+  @include tablet() {
+  }
+  @mixin desktop() {
+  }
+}
+
+@include desktop() {
+  .component {
+    &__main_header {
+      display: inherit;
+      &__logo {
+        float: none;
+        margin: 0 auto;
+      }
+      .menu-burger {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include padmini() {
+  .component {
+    &__main_header {
+      &__logo {
+        float: left;
+        margin: 0 auto;
+        width: 200px;
+        height: auto;
+        img {
+          width: 200px;
+          height: auto;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

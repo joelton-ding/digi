@@ -1,0 +1,72 @@
+@import "mixin";
+
+.home_middle {
+  width: 100%;
+  background: #EBF6FF;
+  padding: 56px 1rem;
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    a {
+      width: 100%;
+      text-decoration: none;
+    }
+
+
+    .hvr_float_shadow:before {
+      background: radial-gradient(ellipse at center, rgba(14, 79, 121, 0.35) 0%, rgba(14, 79, 121, 0) 80%)
+    }
+    .box {
+      text-align: center;
+      padding: 10% 50px;
+      width: 100%;
+      margin: 10px 0;
+      background: #fff;
+      box-shadow: 1px 2px 4px 2px rgba(0,0,0,.04);
+      border-radius: 20px;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 1px 3px 5px 3px rgba(0,0,0,.09);
+      }
+      img {
+        margin-bottom: 0;
+      }
+      .title {
+        width: 100%;
+        margin: 10px auto 0;
+        font-weight: $font-semi-bold-600;
+        color: #0E4F79;
+      }
+    }
+  }
+}
+
+
+@include mobile(){
+  .main_banner {
+    .inner {
+      .detail-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+@include padmini(){
+  .home_middle {
+    .inner {
+        display: inline-block;
+        width: 100%;
+      .box {
+        width: auto;
+      }
+    }
+  }
+}
+@include tablet(){
+  
+}
+@include desktop(){
+
+}

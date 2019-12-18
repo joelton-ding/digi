@@ -1,0 +1,82 @@
+@import "mixin";
+
+.main_banner {
+  background: url('../../../images/homepage-banner.png');
+  background-position: top center;
+  background-size: cover;
+  height: calc(100vh - 100px);
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    .detail_wrapper {
+      width: 350px;
+      display: flex;
+      justify-content: center;
+      height: calc(100vh - 100px);
+      flex-direction: column;
+      @include mobile(){
+        width: 100%;
+      }
+      .inner {
+        align-items: baseline;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+      }
+      h1 {
+        font-size: 60px;
+        color: #0E4F79;
+        line-height: 71px;
+        text-align: left;
+        font-weight: $font-semi-bold-600;
+        @include mobile(){
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+      .text_output {
+        color: #0E4F79;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      button {
+        background: #3F87C8;
+        border-radius: 30px;
+        padding: 15px 10px;
+        border: 0;
+        margin-top: 15px;
+        overflow: hidden;
+        height: $button-height;
+        a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px;
+          font-size: 16px;
+          line-height: 19px;
+          font-weight: 600;
+          font-family: "work sans", sans-serif;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+          margin: -2px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+@include mobile(){
+  
+}
+@include padmini(){
+  
+}
+@include tablet(){
+  
+}
+@include desktop(){
+
+}

@@ -1,0 +1,166 @@
+@import "mixin";
+
+.contact_form {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 10px 30px 0 rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  h1 {
+    color: $blue;
+    margin-bottom: 33px;
+  }
+  label {
+    width: 100%;
+    display: block;
+    padding-bottom: 20px;
+    color: #0e4f79;
+    font-size: 16px;
+    font-weight: $font-bold-700;
+    .error_msg {
+      font-weight: 400;
+      color: #f5222d;
+      margin: 5px 2px;
+      font-size: 14px;
+      svg {
+        vertical-align: middle;
+        margin: -3px 3px 0 0;
+        color: #f5222d;
+      }
+    }
+    sup {
+      color: #ff0000;
+      font-weight: $font-regular-400;
+    }
+  }
+  select {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #cedeec;
+    height: 46px;
+    margin-top: 3px;
+    outline: 0;
+    font-weight: 500;
+    color: $blue;
+    background: #fff;
+  }
+  input {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #cedeec;
+    height: 46px;
+    margin-top: 3px;
+    font-weight: 500;
+    padding: 0.5em 2.25em 0.5em 1em;
+    color: $blue;
+  }
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $blue;
+    opacity: 1; /* Firefox */
+  }
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $blue;
+  }
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $blue;
+  }
+  .input_errors {
+    border: 1px solid #ff0000;
+  }
+  .select {
+    position: relative;
+  }
+  .select select {
+    padding: 0.5em 2.25em 0.5em 1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .select:after {
+    position: absolute;
+    top: 12px;
+    right: 0.5em;
+    pointer-events: none;
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="rgba(14,79,121,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  }
+  textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-weight: 500;
+    padding: 0.5em 2.25em 0.5em 1em;
+    color: $blue;
+    margin-top: 3px;
+  }
+  button[disabled] {
+    background-color: #ccc;
+    pointer-events: none;
+  }
+  button.hvr-sweep-to-right:hover[disabled] {
+    background-color: #ccc;
+    pointer-events: none;
+  }
+  button[disabled].hvr-sweep-to-right:hover,
+  button[disabled]:hover.hvr-sweep-to-right {
+    background-color: #ccc;
+    pointer-events: none;
+  }
+
+  button:hover[disabled] {
+    background-color: #ccc;
+    pointer-events: none;
+  }
+  button {
+    float: right;
+    background: #3f87c8;
+    border-radius: 30px;
+    padding: 10px 25px;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    height: $button-height;
+    text-transform: uppercase;
+    font-weight: $font-semi-bold-600;
+    a {
+      text-decoration: none;
+      padding: 10px;
+      font-size: 14px;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin: -2px 15px 0 0;
+    }
+  }
+  .client_id {
+    display: none;
+  }
+}
+
+.success_msg {
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  svg {
+    background: #52c41a;
+    color: #fff;
+    border-radius: 100%;
+    padding: 3px;
+    vertical-align: middle;
+    margin: -2px 4px 0 0;
+  }
+}
+
+.alert_dialog_title{
+  color: #333;
+}
+
+.dialog_wrapper{
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+}

@@ -1,0 +1,51 @@
+{
+  "repoURL": "git@repo.plus65host.net:generic-sites/dgbank/dgbanking-website.git",
+  "env": {
+    "staging": {
+      "common": {
+        "servers": "git@172.16.16.152",
+        "branch": "staging",
+        "workspace": "/tmp/shipit-builder",
+        "envConfig": "staging",
+        "keepReleases": "10",
+        "purgeINFO": {
+          "url": "",
+          "email": "",
+          "authKey": ""
+        }
+      },
+      "member": {
+        "path": ""
+      },
+      "admin": {
+        "path": ""
+      },
+      "website": {
+        "path": "/var/www/html/staging-website.dgbanking.com"
+      }
+    },
+    "prod": {
+      "common": {
+        "servers": "git@172.16.16.152",
+        "branch": "master",
+        "workspace": "/tmp/shipit-builder",
+        "envConfig": "prod",
+        "keepReleases": "10",
+        "purgeINFO": {
+          "url": "",
+          "email": "",
+          "authKey": ""
+        }
+      },
+      "member": {
+        "path": ""
+      },
+      "admin": {
+        "path": ""
+      },
+      "website": {
+        "path": "/var/www/html/dgbanking.com"
+      }
+    }
+  }
+}

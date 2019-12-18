@@ -1,0 +1,95 @@
+import React, { useState } from "react"
+import Img from "gatsby-image"
+import Fade from "react-reveal/Fade"
+
+import styles from "./style.module.scss"
+import { Query } from "./queries"
+import BackgroundSlider from "./backgroundslider"
+
+const BannerSlider = ({ title, nav }) => {
+  return (
+    <>
+      <BackgroundSlider
+        query={Query()}
+        initDelay={2} //removed temp
+        transition={4} //removed temp
+        duration={8} //removed temp
+        images={[
+          "banners/homepage-banner1.png",
+          "banners/homepage-banner2.png",
+          "banners/homepage-banner3.png",
+        ]}
+        nav={nav}
+      >
+        <div
+          style={{
+            width: "100vw",
+            height: "90vh",
+          }}
+        />
+      </BackgroundSlider>
+      <div className={styles.container}>
+        <div className={styles.main_banner}>
+          <div className={styles.inner}>
+            <div className={styles.detail_wrapper}>
+              <div className={styles.inner}>
+                <Fade left>
+                  <h1>{title ? title : ""}</h1>
+                </Fade>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+const BannerSliderWithNav = ({ title, children }) => {
+  const [index, setIndex] = useState(0)
+  const { allFile } = Query()
+  const edgesLength = allFile.edges.length - 1
+  const { node } = allFile.edges[index]
+
+  const handleNext = () =>
+    index === edgesLength ? setIndex(0) : setIndex(index + 1)
+  const handlePrevious = () =>
+    index === 0 ? setIndex(edgesLength) : setIndex(index - 1)
+
+  return (
+    <>
+      <div className={styles.imgContainer}>
+        <Img
+          key={node.id}
+          fluid={node.childImageSharp.fluid}
+          alt={node.name.replace(/-/g, " ").substring(2)}
+          style={{
+            width: "100vw",
+            height: "100vh",
+          }}
+        />
+        <div className={styles.container}>
+          <div className={styles.main_banner}>
+            <div className={styles.inner}>
+              <div className={styles.detail_wrapper}>
+                <div className={styles.inner}>
+                  <Fade left>
+                    <h1>{title}</h1>
+                  </Fade>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button className={styles.prevBTN} onClick={() => handlePrevious()}>
+            {"<"}
+          </button>
+          <button className={styles.nextBTN} onClick={() => handleNext()}>
+            {">"}
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export { BannerSlider, BannerSliderWithNav }

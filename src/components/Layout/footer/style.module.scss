@@ -1,0 +1,115 @@
+@import "mixin";
+
+.back_to_top {
+  background: #cedeec;
+  width: 80px;
+  height: 80px;
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  color: #fff;
+  line-height: 117px;
+}
+.component_footer {
+  width: 100%;
+  background: #003151;
+  padding: 48px 1rem;
+  color: #fff;
+  .main_footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    .footer_logo {
+      img {
+        margin-bottom: 16px;
+      }
+      .note_text {
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: $font-regular-400;
+        div {
+          font-weight: $font-bold-700;
+          font-size: 14px;
+        }
+      }
+    }
+    .footer_menu {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        margin-bottom: 4px;
+        a {
+          font-size: 12px;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #fff;
+          letter-spacing: 1px;
+          font-weight: $font-medium-500;
+          font-family: $base__font-family;
+        }
+      }
+    }
+  }
+
+  .copyright_content {
+    width: 100%;
+    margin-top: 52px;
+    .copyright {
+      font-size: 10px;
+      line-height: 11px;
+      font-family: $base__font-family;
+      font-weight: $font-regular-400;
+      color: #c9dfef;
+      text-transform: uppercase;
+    }
+    .disclaimer {
+      margin: 0;
+      padding: 0;
+      float: right;
+      li {
+        list-style: none;
+        float: left;
+        font-size: 10px;
+        line-height: 11px;
+        font-family: $base__font-family;
+        font-weight: 400;
+        padding: 0 5px;
+        text-transform: uppercase;
+        &:first-child {
+          a {
+            padding-left: 0;
+          }
+        }
+        a {
+          color: #c9dfef;
+          text-decoration: none;
+          border-right: 1px solid #c9dfef;
+          padding: 0 10px;
+          text-transform: uppercase;
+        }
+        &:last-child {
+          a {
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+  @include mobile() {
+    .footer_menu_1 {
+      padding: 0;
+    }
+    .footer_menu_2 {
+      padding-bottom: 0;
+    }
+    .footer_menu_3 {
+      padding-top: 0;
+      padding: 0;
+    }
+    .footer_menu_4 {
+      padding-top: 0;
+    }
+  }
+}

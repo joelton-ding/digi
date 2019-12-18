@@ -1,0 +1,44 @@
+@import "mixins";
+
+html, body{
+  scroll-behavior: smooth;
+  color: $text;
+}
+
+#___gatsby { 
+  height: 100%;
+  & > div {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile(){
+      height: 100%;
+    }
+  }
+}
+
+a{
+  color: $primary;
+  &:hover{
+    text-decoration: none;
+  }
+
+  &[disabled]{
+    opacity: 0.5;
+  }
+}
+  
+h1, h2, h3, h4, h5, h6 {
+  color: $text;
+}
+
+.font{
+  &-weight{
+    &-600{
+      font-weight: 600;
+    }
+    &-normal{
+      font-weight: normal;
+    }
+  }
+}

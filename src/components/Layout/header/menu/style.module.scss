@@ -1,0 +1,342 @@
+@import "mixin";
+
+.toggle,
+[id^="drop"] {
+  display: none;
+}
+
+nav {
+  @include padmini() {
+    background: $white;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+    &.open {
+      transform: translateX(0);
+    }
+    a {
+      font-size: 2rem;
+      padding: 20px 0;
+      color: $primaryDark;
+      text-decoration: none;
+      transition: color 0.3s linear;
+      font-size: 1.5rem;
+      text-align: center;
+      &:hover {
+        color: $primaryHover;
+      }
+    }
+  }
+
+  margin: 0;
+  padding: 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @include padmini() {
+    .menu {
+      display: block !important;
+      width: 100%;
+      margin-top: 80px;
+    }
+  }
+  ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    li {
+      margin: 0;
+      display: inline-block;
+      float: left;
+      position: relative;
+      @include padmini() {
+        border-radius: 50px;
+        display: block;
+        width: 100%;
+        margin-bottom: 1px;
+        label {
+          svg {
+            vertical-align: middle;
+            margin-top: -2px;
+          }
+        }
+      }
+      &:nth-child(1) {
+        .nav_link_ltr:hover::before {
+          width: 55%;
+          @include padmini() {
+            width: 100%;
+          }
+        }
+        .active {
+          color: $blue-lighten;
+          &::before {
+            width: 55%;
+            bottom: 10px;
+            background: $blue-lighten;
+            @include padmini() {
+              width: 100%;
+              bottom: 0;
+              left: 0;
+              background: transparent;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        .nav_link_ltr:hover::before {
+          width: 55%;
+        }
+        .active {
+          color: $blue-lighten;
+          &::before {
+            background: $blue-lighten;
+            width: 55%;
+            bottom: 10px;
+          }
+        }
+      }
+      &:nth-child(3) {
+        .nav_link_ltr:hover::before {
+          width: 80%;
+        }
+        .active {
+          color: $blue-lighten;
+          &::before {
+            background: $blue-lighten;
+            width: 80%;
+            bottom: 10px;
+          }
+        }
+      }
+      &:nth-child(4) {
+        .nav_link_ltr:hover::before {
+          width: 60%;
+          @include padmini() {
+            width: 100%;
+          }
+        }
+        .active {
+          color: $blue-lighten;
+          &::before {
+            background: $blue-lighten;
+            width: 60%;
+            bottom: 10px;
+            @include padmini() {
+              width: 100%;
+              bottom: 0;
+              left: 0;
+              background: transparent;
+            }
+          }
+        }
+      }
+      &:hover {
+        > ul {
+          display: inherit;
+          @include padmini() {
+            display: none;
+          }
+        }
+      }
+      a {
+        display: block;
+        padding: 19px 15px;
+        color: $blue;
+        font-size: 16px;
+        text-decoration: none;
+        @include padmini() {
+          color: $blue;
+        }
+      }
+    }
+    .nav_link {
+      font-size: 16px;
+      text-decoration: none;
+      color: $blue;
+      padding: 20px 0px;
+      margin: 0px 20px;
+      font-weight: $font-bold-700;
+      line-height: 19px;
+    }
+    .nav_link:hover {
+      opacity: 1;
+    }
+    .nav_link::before {
+      transition: 300ms;
+      height: 2px;
+      content: "";
+      position: absolute;
+      background-color: #031d44;
+    }
+    .nav_link_ltr::before {
+      width: 0%;
+      bottom: 10px;
+    }
+    .open_account {
+      border: 1px solid #0e4f79;
+      border-radius: 30px;
+      text-align: center;
+      width: 200px;
+      @include padmini() {
+        width: 80%;
+        border-radius: 50px;
+        margin: 0 10%;
+      }
+      a {
+        text-transform: uppercase;
+        font-weight: $font-bold-700;
+        svg {
+          vertical-align: middle;
+          margin: -5px 10px 0 0;
+          .user {
+            fill: $blue;
+          }
+        }
+      }
+      .active {
+        color: $blue-lighten;
+        .user {
+          fill: #3f87c8;
+        }
+      }
+    }
+    ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      margin: 0;
+      padding: 5px 0;
+      background: #3f87c8;
+      border-radius: 5px;
+      overflow: hidden;
+      @include padmini() {
+        float: none;
+        position: static;
+        color: $white;
+        border-radius: 0;
+      }
+      li {
+        min-width: 250px;
+        text-align: left;
+        float: none;
+        display: list-item;
+        position: relative;
+        @include padmini() {
+          display: block;
+          width: 100%;
+          margin-bottom: 1px;
+          display: block;
+          label {
+            svg {
+              vertical-align: middle;
+              margin-top: -2px;
+            }
+          }
+        }
+        a {
+          color: #fff;
+          font-weight: $font-bold-700;
+          padding: 8px 0 8px 0;
+          margin-left: 24px;
+          font-size: 16px;
+          @include padmini() {
+            margin-left: 0;
+          }
+          &:hover {
+            color: #fff;
+            padding-left: 24px;
+            transition: 0.5s ease;
+            &:after {
+              display: inline-block;
+              background: #fff;
+              content: "";
+              height: 2px;
+              left: 24px;
+              top: 50%;
+              width: 20px;
+              position: absolute;
+              transition: 0.5s ease;
+            }
+          }
+        }
+      }
+      @include padmini() {
+        &:hover {
+          > ul {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include padmini() {
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+  .toggle {
+    display: block;
+    padding: 20px 0;
+    color: $blue;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    font-weight: $font-bold-700;
+  }
+  [id^="drop"]:checked + ul {
+    display: block;
+  }
+}
+
+.menu {
+  // .login {
+  //   border: 1px solid #0E4F79;
+  //   border-radius: 30px;
+  //   text-align: center;
+  //   width: 128px;
+  //   margin-left: 10px;
+  //   background: #0E4F79;
+  //   @include padmini(){
+  //     width: 100%;
+  //     margin: 10px 0 0 0;
+  //   }
+  //   a {
+  //     color: #fff !important;
+  //     text-transform: uppercase;
+  //     font-size: 14px;
+  //     svg {
+  //       vertical-align: middle;
+  //       margin: -2px 5px 0 0;
+  //     }
+  //     &:after {
+  //       display: none;
+  //     }
+  //   }
+  //   a:after {
+  //     margin-left: 0;
+  //   }
+
+  //   .active {
+  //     color: $blue-lighten;
+  //     &:after {
+  //       display: none;
+  //     }
+  //   }
+  // }
+}

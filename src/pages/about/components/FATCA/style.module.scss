@@ -1,0 +1,84 @@
+@import "mixin";
+.fatca_wrapper {
+  width: 100%;
+  background: $section-blue-bg;
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    .fatca_img {
+      text-align: center;
+      img {
+        max-width: 100%;
+      }
+    }
+    .fatca_content {
+      ul {
+        li {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .person_wrapper {
+      padding-left: 6px;
+      h2 {
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: $font-bold-700;
+      }
+      margin-top: 25px;
+      ul {
+        li {
+          margin: 0;
+        }
+      }
+    }
+    .note {
+      font-size: 12px;
+      line-height: 14px;
+      a {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.buttonContainer {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 200px;
+
+  .button_default {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+    background: transparent;
+    a {
+      width: 321px;
+      text-decoration: none;
+      color: $blue;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid #0e4f79;
+      border-radius: 28px;
+      padding: 19px 25px;
+      height: $button-height;
+      font-size: 14px;
+      line-height: 16px;
+      overflow: hidden;
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+@include mobile() {
+  .buttonContainer {
+    padding-top: 0;
+  }
+}
