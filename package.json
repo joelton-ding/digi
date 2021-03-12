@@ -36,7 +36,7 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.9.0",
     "react": "^16.10.2",
-    "react-dev-utils": "^9.1.0",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.10.2",
     "react-feather": "^2.0.3",
     "react-focus-lock": "^2.0.5",
