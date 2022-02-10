@@ -79,7 +79,7 @@
     "flow-bin": "^0.98.1",
     "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-source-wordpress": "^3.1.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prettier": "^1.18.2",
     "react-slidedown": "^2.4.4",
     "shipit": "^1.2.0",
